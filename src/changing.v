@@ -71,6 +71,6 @@ module changing (
                 (animation == 6'b111101) ? 2 :   // ani61
                 (animation == 6'b111110) ? 2 :   // ani62
                 (animation == 6'b111111) ? 2 :   // ani63
-            */  6'b111111;  // default
+            */  6'b000000;  // default
 
 endmodule
