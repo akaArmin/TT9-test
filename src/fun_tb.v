@@ -21,7 +21,7 @@ module fun_tb;
     wire [7:0] bidirectional_output_enable;
 
     // Instantiate the Unit Under Test (UUT)
-    tt_um_seven_segment_fun1 uut (
+    tt_um_seven_segment_animations uut (
         .ui_in(ui_in),    
         .uo_out(seven_segment_output),  
         .uio_in(uio_in),   
