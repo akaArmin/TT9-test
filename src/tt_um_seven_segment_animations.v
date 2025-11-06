@@ -77,7 +77,7 @@ module tt_um_seven_segment_animations (
 
     // FSM states - Animation
     localparam ST_ANI0   = 6'b000000;	// Animation 0
-    localparam ST_ANImax = 6'b110010;	// Animation 50
+    localparam ST_ANImax = 6'b100001;	// Animation 33
 
     parameter ANI_BIT = 6;
     reg [ANI_BIT-1:0] animation;
