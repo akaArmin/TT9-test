@@ -18,11 +18,11 @@ module tt_um_seven_segment_animations (
     input wire clk,      
     input wire rst_n     
 );
-    // Debounced button signals
+    // Debounced button signals        
     wire debounced_btn1_incAni;
     wire debounced_btn2_decAni;
-    wire debounced_btn3_incSpeed;
-    wire debounced_btn4_decSpeed;
+    wire debounced_btn3_SpeedDown;    // _SpeedDown
+    wire debounced_btn4_SpeedUP;     // _decSpeed
 
     // Pin assignment
     // wire clk = io_in[0]           // Input Clock -> 10MHz
@@ -47,14 +47,14 @@ module tt_um_seven_segment_animations (
     .clk(clk), 
     .reset(reset), 
     .button_in(ui_in[2]), 
-    .one_shot_pulse(debounced_btn3_incSpeed)
+    .one_shot_pulse(debounced_btn3_SpeedDown)
     );
     
     button db_btn4(
     .clk(clk), 
     .reset(reset), 
     .button_in(ui_in[3]), 
-    .one_shot_pulse(debounced_btn4_decSpeed)
+    .one_shot_pulse(debounced_btn4_SpeedUP)
     );
     
 
@@ -132,9 +132,9 @@ module tt_um_seven_segment_animations (
     always @(*) begin: combinatoric_compare
         next_compare = compare;
 
-        if (debounced_btn3_incSpeed && (compare <= comMax)) begin
+        if (debounced_btn3_SpeedDown && (compare <= comMax)) begin
             next_compare = compare + comInc;
-        end else if (debounced_btn4_decSpeed && (compare >= comMin)) begin
+        end else if (debounced_btn4_SpeedUP && (compare >= comMin)) begin
             next_compare = compare - comInc;
         end
     end
