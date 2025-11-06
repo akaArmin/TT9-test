@@ -8,7 +8,7 @@
 `include "debouncer.v"
 `include "synchronizer.v"*/
 
-module tt_um_seven_segment_fun1 (
+module tt_um_seven_segment_animations (
     input wire [7:0] ui_in,    
     output wire [7:0] uo_out,  
     input wire [7:0] uio_in,   
